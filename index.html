@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Shiva Tejaswi Mandem — Data Engineer & AI Architect</title>
+<title>Shiva Tejaswi Mandem — Data & AI Professional</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
@@ -525,6 +525,7 @@ footer span{
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#play">🎮 Play</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-toggle" onclick="toggleNav()">
@@ -538,7 +539,7 @@ footer span{
   <div class="hero-left">
     <div class="avail-tag"><span class="avail-dot"></span>Available for Opportunities</div>
     <h1 class="hero-name">Shiva<br>Tejaswi<br>Mandem</h1>
-    <p class="hero-sub">Data Engineer &amp; <span>AI/ML Architect</span> building scalable data infrastructure, intelligent analytics, and LLM-powered systems across cloud platforms.</p>
+    <p class="hero-sub"><span>Data Engineer · Data Scientist · Data Analyst · BI Developer</span><br>🚀 I turn messy data into million-dollar decisions — and I make it look easy.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">Get in Touch</a>
       <a href="#experience" class="btn btn-outline">View My Work</a>
@@ -550,10 +551,10 @@ footer span{
       <div class="spin-ring"></div>
       <div class="hero-card">
         <div class="card-avatar">STM</div>
-        <div class="card-role">Data Engineer &<br>AI/ML Architect</div>
+        <div class="card-role">Engineer · Scientist · Analyst<br>BI Dev · AI Builder</div>
         <div class="card-loc">📍 Seattle, WA</div>
         <div class="card-stats">
-          <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Years Exp</div></div>
+          <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Years Exp</div></div>
           <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Industries</div></div>
           <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Tech Stack</div></div>
         </div>
@@ -707,7 +708,426 @@ footer span{
     </div>
   </div>
 </section>
+<!-- PLAY SECTION -->
+<section id="play" style="max-width:1280px;margin:0 auto;padding:80px 5%">
+  <div class="reveal from-bottom">
+    <span class="sec-label">Interactive</span>
+    <h2 class="sec-title">🎮 <span>Play & Explore</span></h2>
+    <p style="color:var(--text-dim);font-size:.95rem;margin-top:-30px;margin-bottom:40px">Think you know data? Let's find out — test your skills, guess Tej's stack, and play a data word game!</p>
+  </div>
+
+  <!-- GAME TABS -->
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px" id="game-tabs">
+    <button class="game-tab active" onclick="switchGame('quiz')">🧠 Data Quiz</button>
+    <button class="game-tab" onclick="switchGame('guess')">🔍 Guess The Tool</button>
+    <button class="game-tab" onclick="switchGame('wordle')">🟩 Data Wordle</button>
+    <button class="game-tab" onclick="switchGame('trivia')">⚡ Speed Trivia</button>
+  </div>
+
+  <!-- QUIZ GAME -->
+  <div id="game-quiz" class="game-panel">
+    <div class="game-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:10px">
+        <div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700">🧠 Data Engineering Quiz</div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <span style="font-size:.82rem;color:var(--text-dim)">Score: <span id="q-score" style="color:var(--cyan);font-weight:700">0</span></span>
+          <span style="font-size:.82rem;color:var(--text-dim)">Q: <span id="q-num" style="color:var(--amber);font-weight:700">1</span>/10</span>
+        </div>
+      </div>
+      <div id="q-progress-bar" style="height:5px;background:rgba(255,255,255,.07);border-radius:5px;margin-bottom:28px;overflow:hidden">
+        <div id="q-progress" style="height:100%;width:10%;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:5px;transition:width .4s ease"></div>
+      </div>
+      <div id="q-question" style="font-size:1.1rem;font-weight:600;line-height:1.6;margin-bottom:24px;color:var(--text)"></div>
+      <div id="q-options" style="display:flex;flex-direction:column;gap:10px"></div>
+      <div id="q-feedback" style="margin-top:18px;font-size:.9rem;min-height:24px;font-weight:500"></div>
+      <div id="q-result" style="display:none;text-align:center;padding:30px 0">
+        <div style="font-size:3rem;margin-bottom:12px" id="q-result-emoji"></div>
+        <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;margin-bottom:8px" id="q-result-title"></div>
+        <div style="color:var(--text-dim);margin-bottom:24px" id="q-result-sub"></div>
+        <button class="btn btn-primary" onclick="startQuiz()">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUESS THE TOOL -->
+  <div id="game-guess" class="game-panel" style="display:none">
+    <div class="game-card">
+      <div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:8px">🔍 Guess The Tool From The Clue</div>
+      <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:24px">Tej uses this tool in his work. Can you name it from the description?</p>
+      <div id="gt-clue-box" style="background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.2);border-radius:14px;padding:24px;margin-bottom:24px">
+        <div style="font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px">Clue <span id="gt-num">1</span>/8</div>
+        <div id="gt-clue" style="font-size:1rem;line-height:1.7;color:var(--text)"></div>
+      </div>
+      <div id="gt-options" style="display:grid;grid-template-columns:1fr 1fr;gap:10px"></div>
+      <div id="gt-feedback" style="margin-top:16px;font-size:.9rem;min-height:24px;font-weight:500"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px">
+        <span style="font-size:.85rem;color:var(--text-dim)">Score: <span id="gt-score" style="color:var(--amber);font-weight:700">0</span>/<span id="gt-total">8</span></span>
+        <button class="btn btn-outline" id="gt-next" onclick="nextGuess()" style="display:none">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORDLE -->
+  <div id="game-wordle" class="game-panel" style="display:none">
+    <div class="game-card">
+      <div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:8px">🟩 Data Wordle</div>
+      <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:20px">Guess the 5-letter data/tech word in 6 tries. 🟩 = right spot · 🟨 = wrong spot · ⬛ = not in word</p>
+      <div id="wordle-board" style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;align-items:center"></div>
+      <div id="wordle-keyboard" style="display:flex;flex-direction:column;gap:6px;align-items:center;margin-bottom:16px"></div>
+      <div id="wordle-msg" style="text-align:center;font-size:.9rem;font-weight:600;min-height:24px"></div>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:16px">
+        <button class="btn btn-primary" onclick="startWordle()">New Word</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPEED TRIVIA -->
+  <div id="game-trivia" class="game-panel" style="display:none">
+    <div class="game-card">
+      <div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:8px">⚡ Speed Trivia — 10 Seconds!</div>
+      <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:20px">Answer as fast as you can. Each correct answer = points. Faster = more bonus points!</p>
+      <div id="st-timer-wrap" style="margin-bottom:20px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:.8rem;color:var(--text-dim)">Time left</span>
+          <span id="st-timer" style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--pink)">10s</span>
+        </div>
+        <div style="height:6px;background:rgba(255,255,255,.07);border-radius:6px;overflow:hidden">
+          <div id="st-timer-bar" style="height:100%;width:100%;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:6px;transition:width .1s linear"></div>
+        </div>
+      </div>
+      <div id="st-q" style="font-size:1.05rem;font-weight:600;line-height:1.6;margin-bottom:20px;min-height:60px"></div>
+      <div id="st-options" style="display:grid;grid-template-columns:1fr 1fr;gap:10px"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap;gap:8px">
+        <span style="font-size:.85rem;color:var(--text-dim)">Score: <span id="st-score" style="color:var(--cyan);font-weight:700">0</span> pts</span>
+        <span style="font-size:.85rem;color:var(--text-dim)">Q <span id="st-qnum">1</span>/8</span>
+      </div>
+      <div id="st-result" style="display:none;text-align:center;padding:24px 0">
+        <div style="font-size:2.5rem;margin-bottom:10px" id="st-result-emoji"></div>
+        <div style="font-family:var(--font-head);font-size:1.5rem;font-weight:800;margin-bottom:6px">Final Score: <span id="st-final" style="color:var(--cyan)"></span> pts</div>
+        <div style="color:var(--text-dim);margin-bottom:20px" id="st-rank"></div>
+        <button class="btn btn-primary" onclick="startTrivia()">Play Again</button>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
+
+<style>
+.game-tab{
+  padding:10px 22px;border-radius:100px;font-family:var(--font-body);
+  font-size:.85rem;font-weight:600;cursor:pointer;border:1.5px solid var(--border);
+  background:transparent;color:var(--text-dim);transition:all .2s;
+}
+.game-tab:hover{color:var(--text);border-color:rgba(0,229,255,.4)}
+.game-tab.active{background:linear-gradient(135deg,var(--pink),var(--indigo-mid));color:#fff;border-color:transparent;box-shadow:0 4px 20px var(--glow-pink)}
+.game-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:20px;padding:36px;max-width:680px;margin:0 auto;
+}
+.q-option{
+  padding:13px 18px;border-radius:12px;border:1.5px solid var(--border);
+  background:transparent;color:var(--text);font-family:var(--font-body);
+  font-size:.9rem;cursor:pointer;text-align:left;transition:all .2s;width:100%;
+}
+.q-option:hover:not(:disabled){background:rgba(0,229,255,.07);border-color:rgba(0,229,255,.4);transform:translateX(4px)}
+.q-option.correct{background:rgba(0,229,100,.15);border-color:#00e564;color:#00e564}
+.q-option.wrong{background:rgba(255,45,120,.12);border-color:var(--pink);color:var(--pink)}
+.wordle-row{display:flex;gap:6px}
+.wordle-cell{
+  width:52px;height:52px;border:2px solid var(--border);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);font-size:1.3rem;font-weight:800;
+  text-transform:uppercase;color:var(--text);transition:all .3s;
+}
+.wordle-cell.filled{border-color:rgba(0,229,255,.5);animation:pop .1s ease}
+@keyframes pop{0%{transform:scale(1.15)}100%{transform:scale(1)}}
+.wordle-cell.correct{background:#00e564;border-color:#00e564;color:#000}
+.wordle-cell.present{background:var(--amber);border-color:var(--amber);color:#000}
+.wordle-cell.absent{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.1);color:var(--text-dim)}
+.kb-row{display:flex;gap:5px}
+.kb-key{
+  padding:10px 8px;min-width:34px;border-radius:7px;
+  background:rgba(255,255,255,.1);border:none;color:var(--text);
+  font-family:var(--font-body);font-size:.8rem;font-weight:600;
+  cursor:pointer;transition:all .2s;
+}
+.kb-key:hover{background:rgba(255,255,255,.18)}
+.kb-key.correct{background:#00e564;color:#000}
+.kb-key.present{background:var(--amber);color:#000}
+.kb-key.absent{background:rgba(255,255,255,.05);color:rgba(255,255,255,.25)}
+</style>
+
+<script>
+/* ===== GAME SWITCHER ===== */
+function switchGame(id){
+  document.querySelectorAll('.game-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.game-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('game-'+id).style.display='block';
+  event.target.classList.add('active');
+  if(id==='quiz')startQuiz();
+  if(id==='guess')startGuess();
+  if(id==='wordle')startWordle();
+  if(id==='trivia')startTrivia();
+}
+
+/* ===== QUIZ ===== */
+const quizQs=[
+  {q:"What does 'ELT' stand for in modern data engineering?",opts:["Extract, Load, Transform","Extract, Link, Transfer","Encode, Load, Transfer","Extract, List, Transform"],a:0},
+  {q:"Which Snowflake schema uses multiple dimension tables connected through other dimension tables?",opts:["Star Schema","Galaxy Schema","Snowflake Schema","Flat Schema"],a:2},
+  {q:"Apache Kafka is primarily used for what?",opts:["Batch ETL processing","Real-time event streaming","Data visualization","ML model training"],a:1},
+  {q:"What does DAX stand for in Power BI?",opts:["Data Analysis Expressions","Dashboard Analytics XML","Data Aggregation eXtension","Direct Access eXpressions"],a:0},
+  {q:"Which AWS service is used for serverless ETL jobs?",opts:["AWS Lambda","AWS Glue","AWS EC2","AWS Kinesis"],a:1},
+  {q:"What is a 'data lakehouse'?",opts:["A data lake with a house icon","Combines data lake storage with data warehouse analytics","A type of NoSQL database","A Hadoop cluster"],a:1},
+  {q:"In machine learning, what does 'overfitting' mean?",opts:["Model is too simple","Model performs great on training data but poor on new data","Model trains too slowly","Model has too few parameters"],a:1},
+  {q:"What does FAISS stand for in AI?",opts:["Fast Approximate Image Search System","Facebook AI Similarity Search","Flexible AI Indexing & Search System","Fast Async Indexing Search Service"],a:1},
+  {q:"Which Python library is dbt built on top of for data transformation?",opts:["pandas","SQLAlchemy","Jinja2 + SQL","PySpark"],a:2},
+  {q:"What is a 'RAG pipeline' in LLM applications?",opts:["Redundant AI Generation","Retrieval-Augmented Generation","Real-time Agent Gateway","Random Augmented Graph"],a:1},
+];
+let qIdx=0,qScore=0,qAnswered=false;
+function startQuiz(){
+  qIdx=0;qScore=0;qAnswered=false;
+  document.getElementById('q-result').style.display='none';
+  document.getElementById('q-score').textContent='0';
+  renderQuizQ();
+}
+function renderQuizQ(){
+  if(qIdx>=quizQs.length){showQuizResult();return}
+  const q=quizQs[qIdx];
+  document.getElementById('q-num').textContent=qIdx+1;
+  document.getElementById('q-progress').style.width=((qIdx+1)/quizQs.length*100)+'%';
+  document.getElementById('q-question').textContent=q.q;
+  document.getElementById('q-feedback').textContent='';
+  const opts=document.getElementById('q-options');
+  opts.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='q-option';b.textContent=o;
+    b.onclick=()=>answerQuiz(i,b);
+    opts.appendChild(b);
+  });
+  qAnswered=false;
+}
+function answerQuiz(i,btn){
+  if(qAnswered)return;qAnswered=true;
+  const q=quizQs[qIdx];
+  const allBtns=document.querySelectorAll('.q-option');
+  allBtns.forEach(b=>b.disabled=true);
+  if(i===q.a){
+    btn.classList.add('correct');qScore++;
+    document.getElementById('q-score').textContent=qScore;
+    document.getElementById('q-feedback').innerHTML='<span style="color:#00e564">✓ Correct!</span>';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.a].classList.add('correct');
+    document.getElementById('q-feedback').innerHTML='<span style="color:var(--pink)">✗ Not quite!</span>';
+  }
+  setTimeout(()=>{qIdx++;renderQuizQ()},1400);
+}
+function showQuizResult(){
+  document.getElementById('q-options').innerHTML='';
+  document.getElementById('q-question').textContent='';
+  document.getElementById('q-feedback').textContent='';
+  const r=document.getElementById('q-result');r.style.display='block';
+  const pct=qScore/quizQs.length;
+  let emoji,title,sub;
+  if(pct>=0.9){emoji='🏆';title='Data Genius!';sub=`${qScore}/10 — Tej would hire you on the spot!`}
+  else if(pct>=0.7){emoji='🔥';title='Strong Skills!';sub=`${qScore}/10 — You clearly know your data stack.`}
+  else if(pct>=0.5){emoji='📈';title='Getting There!';sub=`${qScore}/10 — Keep learning, you're on the right path.`}
+  else{emoji='💡';title='Keep Exploring!';sub=`${qScore}/10 — Check out Tej's skills section for inspiration!`}
+  document.getElementById('q-result-emoji').textContent=emoji;
+  document.getElementById('q-result-title').textContent=title;
+  document.getElementById('q-result-sub').textContent=sub;
+}
+startQuiz();
+
+/* ===== GUESS THE TOOL ===== */
+const guessData=[
+  {clue:"Tej used this cloud data warehouse at Apple to process over 1 million device repair records daily. It separates compute from storage and supports zero-copy cloning.",tool:"Snowflake",opts:["Redshift","Snowflake","BigQuery","Databricks"]},
+  {clue:"This open-source workflow orchestration tool lets Tej build DAGs to schedule and monitor ETL pipelines across 15+ legacy systems at McKinsey.",tool:"Airflow",opts:["Luigi","Airflow","Prefect","Dagster"]},
+  {clue:"Tej used this Microsoft BI tool to build dashboards with DAX measures, drill-through reports, and threshold alert sliders for a $17B+ budget.",tool:"Power BI",opts:["Tableau","Looker","Power BI","QuickSight"]},
+  {clue:"This framework — developed by Meta — lets Tej build similarity search over vector embeddings for RAG pipelines with GPT-4.",tool:"FAISS",opts:["Pinecone","Chroma","FAISS","Weaviate"]},
+  {clue:"Tej used this computer vision model family at ANOVA Sports to classify basketball play actions and defensive formations from video footage.",tool:"YOLOv8",opts:["ResNet","YOLOv8","VGG16","EfficientDet"]},
+  {clue:"This AWS service was Tej's go-to for training regression, classification, and time-series models for Boehringer Ingelheim at Accenture.",tool:"SageMaker",opts:["EC2","Lambda","SageMaker","Glue"]},
+  {clue:"Tej used this LLM orchestration library to connect GPT-4 with vector stores and build conversational interfaces over financial datasets.",tool:"LangChain",opts:["LlamaIndex","AutoGPT","LangChain","Semantic Kernel"]},
+  {clue:"This open-source ML lifecycle tool helped Tej track experiments, log metrics, and manage model versions at ANOVA Sports.",tool:"MLflow",opts:["W&B","MLflow","DVC","ClearML"]},
+];
+let gtIdx=0,gtScore=0,gtAnswered=false;
+function startGuess(){gtIdx=0;gtScore=0;document.getElementById('gt-score').textContent='0';renderGuess()}
+function renderGuess(){
+  if(gtIdx>=guessData.length){
+    document.getElementById('gt-clue-box').innerHTML=`<div style="text-align:center;padding:20px"><div style="font-size:2rem;margin-bottom:10px">${gtScore>=6?'🏆':'🎯'}</div><div style="font-family:var(--font-head);font-size:1.3rem;font-weight:800;margin-bottom:8px">${gtScore>=6?'You Know Tej\'s Stack!':'Nice Try!'}</div><div style="color:var(--text-dim)">Final score: ${gtScore}/${guessData.length}</div></div>`;
+    document.getElementById('gt-options').innerHTML='';
+    document.getElementById('gt-next').style.display='none';
+    return;
+  }
+  const g=guessData[gtIdx];
+  document.getElementById('gt-num').textContent=gtIdx+1;
+  document.getElementById('gt-clue').textContent=g.clue;
+  document.getElementById('gt-feedback').textContent='';
+  document.getElementById('gt-next').style.display='none';
+  gtAnswered=false;
+  const opts=document.getElementById('gt-options');
+  opts.innerHTML='';
+  [...g.opts].sort(()=>Math.random()-.5).forEach(o=>{
+    const b=document.createElement('button');
+    b.className='q-option';b.textContent=o;
+    b.onclick=()=>{
+      if(gtAnswered)return;gtAnswered=true;
+      document.querySelectorAll('#gt-options .q-option').forEach(x=>x.disabled=true);
+      if(o===g.tool){b.classList.add('correct');gtScore++;document.getElementById('gt-score').textContent=gtScore;document.getElementById('gt-feedback').innerHTML='<span style="color:#00e564">✓ Correct! '+g.tool+'</span>'}
+      else{b.classList.add('wrong');document.getElementById('gt-feedback').innerHTML=`<span style="color:var(--pink)">✗ It was ${g.tool}</span>`}
+      document.getElementById('gt-next').style.display='inline-flex';
+    };
+    opts.appendChild(b);
+  });
+}
+function nextGuess(){gtIdx++;renderGuess()}
+
+/* ===== WORDLE ===== */
+const wordleWords=['spark','kafka','delta','trino','arima','glue','dbt','dag','etl','api','sql','elt'];
+const wordleWords5=wordleWords.filter(w=>w.length===5);
+const wordleAll5=['spark','kafka','delta','trino','arima','query','model','pivot','index','table','batch','layer','stack','cache'];
+let wTarget='',wGuesses=[],wCurrent='',wGameOver=false;
+function startWordle(){
+  wTarget=wordleAll5[Math.floor(Math.random()*wordleAll5.length)];
+  wGuesses=[];wCurrent='';wGameOver=false;
+  document.getElementById('wordle-msg').textContent='';
+  renderWordleBoard();renderWordleKeyboard();
+}
+function renderWordleBoard(){
+  const board=document.getElementById('wordle-board');board.innerHTML='';
+  for(let r=0;r<6;r++){
+    const row=document.createElement('div');row.className='wordle-row';
+    for(let c=0;c<5;c++){
+      const cell=document.createElement('div');cell.className='wordle-cell';
+      if(r<wGuesses.length){
+        const g=wGuesses[r];cell.textContent=g.word[c]||'';
+        cell.classList.add(g.result[c]);
+      } else if(r===wGuesses.length){
+        cell.textContent=wCurrent[c]||'';
+        if(wCurrent[c])cell.classList.add('filled');
+      }
+      row.appendChild(cell);
+    }
+    board.appendChild(row);
+  }
+}
+function renderWordleKeyboard(){
+  const kb=document.getElementById('wordle-keyboard');kb.innerHTML='';
+  const rows=['qwertyuiop','asdfghjkl','zxcvbnm'];
+  const states={};
+  wGuesses.forEach(g=>g.word.split('').forEach((ch,i)=>{
+    const s=g.result[i];
+    if(!states[ch]||states[ch]==='absent'||(states[ch]==='present'&&s==='correct'))states[ch]=s;
+  }));
+  rows.forEach((row,ri)=>{
+    const div=document.createElement('div');div.className='kb-row';
+    if(ri===2){
+      const en=document.createElement('button');en.className='kb-key';en.style.padding='10px 12px';en.textContent='⏎';en.onclick=()=>submitWordle();div.appendChild(en);
+    }
+    row.split('').forEach(ch=>{
+      const b=document.createElement('button');b.className='kb-key';b.textContent=ch;
+      if(states[ch])b.classList.add(states[ch]);
+      b.onclick=()=>typeWordle(ch);div.appendChild(b);
+    });
+    if(ri===2){
+      const del=document.createElement('button');del.className='kb-key';del.style.padding='10px 12px';del.textContent='⌫';del.onclick=()=>{if(wCurrent.length>0){wCurrent=wCurrent.slice(0,-1);renderWordleBoard()}};div.appendChild(del);
+    }
+    kb.appendChild(div);
+  });
+}
+function typeWordle(ch){
+  if(wGameOver||wCurrent.length>=5)return;
+  wCurrent+=ch;renderWordleBoard();
+}
+function submitWordle(){
+  if(wGameOver||wCurrent.length<5){document.getElementById('wordle-msg').textContent='Word must be 5 letters!';return}
+  const result=[];
+  const tArr=wTarget.split('');const gArr=wCurrent.split('');
+  const used=Array(5).fill(false);
+  gArr.forEach((ch,i)=>{if(ch===tArr[i]){result[i]='correct';used[i]=true}else result[i]='absent'});
+  gArr.forEach((ch,i)=>{
+    if(result[i]==='correct')return;
+    const ti=tArr.findIndex((t,j)=>t===ch&&!used[j]&&result[j]!=='correct');
+    if(ti!==-1){result[i]='present';used[ti]=true}
+  });
+  wGuesses.push({word:wCurrent,result});wCurrent='';
+  renderWordleBoard();renderWordleKeyboard();
+  const msg=document.getElementById('wordle-msg');
+  if(result.every(r=>r==='correct')){msg.innerHTML=`<span style="color:#00e564">🎉 You got it! The word was <strong>${wTarget.toUpperCase()}</strong></span>`;wGameOver=true}
+  else if(wGuesses.length>=6){msg.innerHTML=`<span style="color:var(--pink)">Game over! The word was <strong>${wTarget.toUpperCase()}</strong></span>`;wGameOver=true}
+}
+document.addEventListener('keydown',e=>{
+  const panel=document.getElementById('game-wordle');
+  if(panel.style.display==='none')return;
+  if(e.key==='Enter')submitWordle();
+  else if(e.key==='Backspace'){if(wCurrent.length>0){wCurrent=wCurrent.slice(0,-1);renderWordleBoard()}}
+  else if(/^[a-z]$/.test(e.key))typeWordle(e.key);
+});
+startWordle();
+
+/* ===== SPEED TRIVIA ===== */
+const triviaQs=[
+  {q:"What Python library does Tej use for time-series forecasting?",opts:["NumPy","Prophet","Keras","Seaborn"],a:1},
+  {q:"Which company embedded Tej at Apple for reverse logistics analytics?",opts:["Accenture","MIAC","CTDI","ANOVA"],a:2},
+  {q:"What is the primary query language Tej uses in Snowflake pipelines?",opts:["Python","SQL","R","Scala"],a:1},
+  {q:"Which framework did Tej use to build LLM pipelines at McKinsey?",opts:["HuggingFace","LangChain","AutoGPT","Rasa"],a:1},
+  {q:"What sport does ANOVA Sports focus on with Tej's CV models?",opts:["Soccer","Baseball","Basketball","Tennis"],a:2},
+  {q:"Which cloud did Tej use at Accenture for pharmaceutical ML?",opts:["Azure","GCP","AWS","IBM Cloud"],a:2},
+  {q:"What BI tool does Tej primarily use for dashboard development?",opts:["Tableau","Looker","Power BI","Metabase"],a:2},
+  {q:"Where did Tej earn his Master's degree?",opts:["Georgia Tech","UNC Charlotte","UT Austin","Carnegie Mellon"],a:1},
+];
+let stIdx=0,stScore=0,stTimer=null,stTimeLeft=10,stAnswered=false;
+function startTrivia(){
+  stIdx=0;stScore=0;
+  document.getElementById('st-score').textContent='0';
+  document.getElementById('st-result').style.display='none';
+  renderTrivia();
+}
+function renderTrivia(){
+  if(stIdx>=triviaQs.length){showTriviaResult();return}
+  const q=triviaQs[stIdx];stAnswered=false;stTimeLeft=10;
+  document.getElementById('st-qnum').textContent=stIdx+1;
+  document.getElementById('st-q').textContent=q.q;
+  document.getElementById('st-timer').textContent='10s';
+  document.getElementById('st-timer-bar').style.width='100%';
+  const opts=document.getElementById('st-options');opts.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');b.className='q-option';b.textContent=o;
+    b.onclick=()=>answerTrivia(i,b);opts.appendChild(b);
+  });
+  clearInterval(stTimer);
+  stTimer=setInterval(()=>{
+    stTimeLeft-=0.1;
+    document.getElementById('st-timer').textContent=Math.ceil(stTimeLeft)+'s';
+    document.getElementById('st-timer-bar').style.width=(stTimeLeft/10*100)+'%';
+    if(stTimeLeft<=3)document.getElementById('st-timer').style.color='var(--pink)';
+    if(stTimeLeft<=0){clearInterval(stTimer);if(!stAnswered){stAnswered=true;document.querySelectorAll('#st-options .q-option').forEach((b,i)=>{b.disabled=true;if(i===triviaQs[stIdx].a)b.classList.add('correct')});setTimeout(()=>{stIdx++;renderTrivia()},1200)}}
+  },100);
+}
+function answerTrivia(i,btn){
+  if(stAnswered)return;stAnswered=true;clearInterval(stTimer);
+  const q=triviaQs[stIdx];
+  document.querySelectorAll('#st-options .q-option').forEach(b=>b.disabled=true);
+  if(i===q.a){btn.classList.add('correct');const bonus=Math.ceil(stTimeLeft);stScore+=10+bonus;document.getElementById('st-score').textContent=stScore;}
+  else{btn.classList.add('wrong');document.querySelectorAll('#st-options .q-option')[q.a].classList.add('correct')}
+  setTimeout(()=>{stIdx++;renderTrivia()},1200);
+}
+function showTriviaResult(){
+  document.getElementById('st-q').textContent='';
+  document.getElementById('st-options').innerHTML='';
+  document.getElementById('st-result').style.display='block';
+  document.getElementById('st-final').textContent=stScore;
+  let emoji,rank;
+  if(stScore>=120){emoji='🚀';rank='Data Rockstar — You\'re built different!'}
+  else if(stScore>=80){emoji='🔥';rank='Data Pro — Solid knowledge of Tej\'s work!'}
+  else if(stScore>=40){emoji='📊';rank='Analyst in Training — Not bad at all!'}
+  else{emoji='💡';rank='Keep exploring — check out Tej\'s portfolio!'}
+  document.getElementById('st-result-emoji').textContent=emoji;
+  document.getElementById('st-rank').textContent=rank;
+  document.getElementById('st-timer-bar').style.width='0%';
+}
+</script>
 
 <footer>
   <p>Designed &amp; built by <span>Shiva Tejaswi Mandem</span> · Seattle, WA · 2025</p>
@@ -785,7 +1205,7 @@ const experience = [
     badges:[["Power BI","chip-amber"],["Python","chip-cyan"],["R","chip-pink"],["Azure SQL","chip-indigo"],["SOX","chip-amber"]],
   },
   {
-    title:"Software Engineer",company:"Accenture",dates:"Sep 2021 – Jul 2022",loc:"Hyderabad, India",
+    title:"Software Engineer",company:"Accenture",dates:"Oct 2020 – Jul 2022",loc:"Hyderabad, India",
     bullets:[
       "Designed end-to-end data pipelines using AWS Glue and Amazon Redshift for Boehringer Ingelheim pharmaceutical datasets, reducing ETL runtime by 40%.",
       "Built ML models on AWS SageMaker for regression, classification, and clinical time-series forecasting — improving predictive accuracy by 25%.",
